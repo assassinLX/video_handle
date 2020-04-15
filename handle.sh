@@ -14,6 +14,7 @@ for i in `ls *avi`;do
   f=$i
   filename=${f%.*}
   #-an代表不要音频，可能是audio no的缩写
+  # -qscale 0 代表不压缩
   ffmpeg.exe -i $i -an -qscale 0 reduce/$filename.an.avi;
   #-vn代表不要视频画面，可能是video no的缩写
   ffmpeg.exe -i $i -vn reduce/$filename.wav
